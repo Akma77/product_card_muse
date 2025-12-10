@@ -10,7 +10,7 @@ changeColorAllCardButton.addEventListener('click', () => {
 
 //Перекрашивание первой карточки в синий
 const firstProductCard = document.querySelector('.card-container');
-const changeColorFirstCardButton = document.querySelector('#change-first-card-color-button');
+const changeColorFirstCardButton = document.querySelector('#change-first-card-colors-button');
 
 changeColorFirstCardButton.addEventListener('click', () => {
   firstProductCard.style.backgroundColor = blueColorHash
@@ -45,3 +45,8 @@ changeColorButton.addEventListener('click', () => {
   changeColorButton.classList.toggle('pink-mode');
 })
  
+//Задача с зоголвоком, чтобы он выводился в консоль лог
+const pageTitle = document.querySelector('.title');
+pageTitle.addEventListener('mouseenter', () => {
+  console.log(pageTitle.textContent);
+});
