@@ -69,7 +69,8 @@
   height: 24 px;
   color: #A5A3B9;
   padding: 5px 4px;
-  box-sizing: border-box;
+
+ box-sizing: border-box;
 }
 
 .product-name {
