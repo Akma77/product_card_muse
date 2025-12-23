@@ -5,37 +5,41 @@ function checkCityTemperature(city, temperature) {
 checkCityTemperature("Бишкеке", "8");
 
 //№4. Создать переменную, которая хранит внутри себя скорость света (гуглим). Создать функцию, которая принимает 1 аргумент - скорость, внутри функции происходит проверка: если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", если ниже — "Субсветовая  скорость"? если равна — "Скорость света"
-const speedLight = '299792458'  
+const SPEED_LIGHT = 299_792_458;  
 function checkSpeedLight(speed) {
-  if (speed > speedLight) {
+  if (speed > SPEED_LIGHT) {
   console.log('Субсветовая  скорость')
   }
-  else if (speed < speedLight) { 
+  else if (speed < SPEED_LIGHT) { 
   console.log('Сверхсветовая скорость')
   }
   else { 
   console.log('Скорость света')
   }
 }
-checkSpeedLight('299792458')
+checkSpeedLight(299_792_458);
 
 //4 Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".  То-есть с помощью функции мы пытаемся приобрести товар.
 const productPhone = 'Iphone'
 const pricePhone = '740'
 
-function checkBudget(budget) {
+function buyPhone(budget) {
   if (pricePhone > budget) {
-  console.log ("Вам не хватает", pricePhone-budget,"$");
-} 
-else if (pricePhone <= budget) {
+  console.log("Вам не хватает", pricePhone - budget,"$");
+} else if (pricePhone <= budget) {
   console.log(productPhone, "приобретён. Спасибо за покупку !");
 }
   }
-checkBudget('740')
+buyPhone(740);
 
 //6. Создать 1 функцию и именовать её по своему усмотрению
-function setTime (time){
+let magrib = 17_35;
+function setTimeIftar (time){
+if (magrib == time) {
+  console.log ("Наступило вреия ифтара")
 }
+  }
+setTimeIftar(17_35);
 
 //7. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
 const productName = 'Dani'
