@@ -25,21 +25,22 @@ const pricePhone = '740'
 
 function buyPhone(budget) {
   if (pricePhone > budget) {
-  console.log("Вам не хватает", pricePhone - budget,"$");
-} else if (pricePhone <= budget) {
-  console.log(productPhone, "приобретён. Спасибо за покупку !");
-}
+    console.log("Вам не хватает", pricePhone - budget, "$");
+  } else if (pricePhone <= budget) {
+    console.log(productPhone, "приобретён. Спасибо за покупку !");
   }
+}
 buyPhone(740);
 
-//6. Создать 1 функцию и именовать её по своему усмотрению
-let magrib = 17_35;
-function setTimeIftar (time){
-if (magrib == time) {
-  console.log ("Наступило вреия ифтара")
-}
+// 6. Создать 1 функцию и именовать её по своему усмотрению
+function checkIftarTime(time) {
+  const magrib = 17_35;
+  if (magrib === time) {
+    console.log("Наступило время ифтара");
   }
-setTimeIftar(17_35);
+}
+checkIftarTime(17_35);
+
 
 //7. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
 const productName = 'Dani'
