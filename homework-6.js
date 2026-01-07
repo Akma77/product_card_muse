@@ -107,8 +107,8 @@ console.log(allAutoBrand)
   Возвращает новый массив, где у каждого автомобиля есть свойство isRare.
   isRare = true (если год > 2000), иначе false.
 */
-const isRare = allAutoBrand.map(auto => {
-  auto.isRare = auto.year > 2000 ? true : false
+const carsWithRare = allAutoBrand.map(auto => {
+  auto.isRare = auto.year > 2000
   return auto
 })
 console.log(isRare)
