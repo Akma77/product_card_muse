@@ -1,36 +1,37 @@
 // 2. Создать массив чисел от 1 до 10. Отфильтровать его таким образом, что бы мы получил массив чисел, начиная с 5.
-const arrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-console.log(arrayNumbers)
+const arrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(arrayNumbers);
 
-const newArrayNumbers = arrayNumbers.slice(4);  
-console.log(newArrayNumbers); 
+const newArrayNumbers = arrayNumbers.filter(num => num >= 5);
+console.log(newArrayNumbers);
 
 // 3. Создать массив строк, относящихся к любой сущности (название фильмов/книг, кухонные приборы, мебель и т.д.), проверить, есть ли в массиве какая-то определенная сущность.
-const arrayStrings = ['apple', 'banana', 'cherry', 'grape']
-const isExist = arrayStrings.includes('apple')
-console.log(isExist)
+const fruitArray = ['apple', 'banana', 'cherry', 'grape'];
+const searchFruit = 'apple';
+const isExist = fruitArray.some(fruit => fruit === searchFruit);
+console.log(isExist);
 
 // 4. Написать функцию, которая аргументом будет принимать массив и изменять его порядок на противоположный ("переворачивать") . Два вышеуказанных массива с помощью этой функции перевернуть.
 function reverseArray(array) {
-  return array.reverse()
+  return array.reverse();
 }
-console.log(reverseArray(arrayNumbers))
-console.log(reverseArray(arrayStrings))
+console.log(reverseArray(arrayNumbers));
+console.log(reverseArray(fruitArray));
 
 // 5.
 import { socialMediaComments } from './comments.js';
 
-const usersWithComEmail = socialMediaComments.filter(comment => comment.email.endsWith('.com'));
-console.log(usersWithComEmail);
+const filteredComments = socialMediaComments.filter(comment => comment.email.endsWith('.com'));
+console.log(filteredComments);
 
 // 8. Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1
-const postIdChange = socialMediaComments.map(comment => {
+const updatedComments = socialMediaComments.map(comment => {
   return {
     ...comment,
     postId: comment.id <= 5 ? 2 : 1
   };
 });
-console.log(postIdChange);
+console.log(updatedComments);
 
 // 9. Перебрать массив, что бы объекты состояли только из айди и имени
 const idAndName = socialMediaComments.map(comment => {
@@ -42,13 +43,13 @@ const idAndName = socialMediaComments.map(comment => {
 console.log(idAndName);
 
 // 10.  Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false
-const isInvalid = socialMediaComments.map(comment => {
+const checkedBodyLength = socialMediaComments.map(comment => {
   return {
     ...comment,
     isInvalid: comment.body.length > 180 ? true : false
   };
 });
-console.log(isInvalid); 
+console.log(checkedBodyLength);
 
 //11 Используем reduce для получения массива почт
 const emailsByReduce = socialMediaComments.reduce((acc, comment) => {
@@ -64,12 +65,12 @@ console.log(emailsByMap);
 // 12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
 
 // 1. Используя toString()
-const emailsStringToString = emailsByReduce.toString();
-console.log('emailsStringToString:', emailsStringToString);
+const emailsText = emailsByReduce.toString();
+console.log('emailsText:', emailsText);
 
 // 2. Используя join() с запятой (по умолчанию)
-const emailsStringJoinDefault = emailsByReduce.join();
-console.log('emailsStringJoinDefault:', emailsStringJoinDefault);
+const joinedEmails = emailsByReduce.join();
+console.log('joinedEmails:', joinedEmails);
 
 // 3. Используя join() с другим разделителем, например "; "
 const emailsStringJoinSemicolon = emailsByReduce.join('; ');
