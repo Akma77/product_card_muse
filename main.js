@@ -10,7 +10,7 @@ changeColorAllCardButton.addEventListener('click', () => {
 
 //Перекрашивание первой карточки в синий
 const firstProductCard = document.querySelector('.card-container');
-const changeColorFirstCardButton = document.querySelector('#change-first-card-colors-button');
+const changeColorFirstCardButton = document.querySelector('#change-first-card-color-button');
 
 changeColorFirstCardButton.addEventListener('click', () => {
   firstProductCard.style.backgroundColor = blueColorHash
@@ -27,7 +27,8 @@ function openGoogle() {
     window.open('https://google.com')
   } else {
     return;
-  }}
+  }
+}
 
 //Вывод консоль лог
 const outputLogButton = document.querySelector('#output-console-log')
@@ -44,7 +45,7 @@ changeColorButton.addEventListener('click', () => {
   changeColorButton.style.backgroundColor = greenColorHash
   changeColorButton.classList.toggle('pink-mode');
 })
- 
+
 //Задача с зоголвоком, чтобы он выводился в консоль лог
 const pageTitle = document.querySelector('.title');
 pageTitle.addEventListener('mouseenter', () => {
