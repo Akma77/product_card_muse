@@ -1,20 +1,36 @@
 //Перекрашивание всех карточек в зелёный
-const productCards = document.querySelectorAll('.card-container');
-const changeColorAllCardButton = document.querySelector('#change-all-cards-colors-button');
 const greenColorHash = '#00FF00';
 const blueColorHash = '#0000FF';
 
-changeColorAllCardButton.addEventListener('click', () => {
-  productCards.forEach((card) => card.style.backgroundColor = greenColorHash)
-})
+function initCardHandlers() {
+  const productCards = document.querySelectorAll('.card-container');
+  const changeColorAllCardButton = document.querySelector('#change-all-cards-colors-button');
 
-//Перекрашивание первой карточки в синий
-const firstProductCard = document.querySelector('.card-container');
-const changeColorFirstCardButton = document.querySelector('#change-first-card-color-button');
+  if (changeColorAllCardButton && productCards.length > 0) {
+    changeColorAllCardButton.addEventListener('click', () => {
+      productCards.forEach((card) => card.style.backgroundColor = greenColorHash)
+    });
+  }
 
-changeColorFirstCardButton.addEventListener('click', () => {
-  firstProductCard.style.backgroundColor = blueColorHash
-})
+  //Перекрашивание первой карточки в синий
+  const firstProductCard = document.querySelector('.card-container');
+  const changeColorFirstCardButton = document.querySelector('#change-first-card-colors-button');
+
+  if (changeColorFirstCardButton && firstProductCard) {
+    changeColorFirstCardButton.addEventListener('click', () => {
+      firstProductCard.style.backgroundColor = blueColorHash
+    });
+  }
+}
+
+// Вызываем после загрузки DOM и создания карточек
+document.addEventListener('DOMContentLoaded', () => {
+  // Ждем немного, чтобы homework-8.js успел создать карточки
+  setTimeout(initCardHandlers, 100);
+});
+
+// Также экспортируем функцию для вызова из homework-8.js
+window.initCardHandlers = initCardHandlers;
 
 //Кнопка открыть гугл сайт
 const openGoogleButton = document.querySelector('#open-google');
