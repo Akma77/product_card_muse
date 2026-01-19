@@ -4,10 +4,6 @@ import { products } from './products.js';
 const productList = document.querySelector('.product-list');
 const productTemplate = document.querySelector('#product-template');
 
-function formatPrice(price) {
-  return price.toLocaleString('ru-RU') + ' ₽';
-}
-
 // 5. Реализовать функцию, которая при старте страницы выводит сообщение (через функцию prompt)
 // "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата - будет выводить
 // введенное количество. Должна быть защита от ввода других значений (проверка if).
