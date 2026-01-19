@@ -5,26 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Интернет-магазин по уходу за кожей. Выбери свой продукт!">
 </head>
 
 <body>
   <button id="change-all-cards-colors-button" class="button-design">Сменить цвет всех карточек</button>
-  <button id="change-first-card-color-button" class="button-design">Сменить цвет первой карточки</button>
+  <button id="change-first-card-colors-button" class="button-design">Сменить цвет первой карточки</button>
   <button id="open-google" class="button-design">Открыть Google</button>
   <button id="output-console-log" class="button-design">Вывести сообщение в консоль лог</button>
   <button id="change-color-button" class="button-design">Поменять цвет кнопки</button>
   <header class="title-container">
     <h1 class="title">Выбери свой продукт</h1>
   </header>
-  <ul class="product-list">
-  </ul>
+  <template id="product-template">
+    <li>
+      <div class="card-container">
+        <img class="product-image" width="290" height="245" alt="">
+        <p class="product-category"></p>
+        <h2 class="product-name"></h2>
+        <p class="product-description"></p>
+        <h3 class="compound-name">Cостав:</h3>
+        <ul class="product-compound"></ul>
+        <div class="product-price-container">
+          <span class="product-price-label">Цена:</span>
+          <span class="product-price"></span>
+        </div>
+      </div>
+    </li>
+  </template>
+  <ul class="product-list"></ul>
   <script src="main.js" defer></script>
   <script src="homework-5.js" defer></script>
-  <script src="homework-6.js" defer></script>
-  <script src="homework-7.js" type="module"></script>
+  <!-- <script src="homework-6.js" defer></script>
+  <script src="homework-7.js" defer></script> -->
+  <script src="homework-8.js" type="module" defer></script>
+
 </body>
 
 </html>
