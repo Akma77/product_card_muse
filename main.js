@@ -4,7 +4,7 @@ const blueColorHash = '#0000FF';
 
 function initCardHandlers() {
   const productCards = document.querySelectorAll('.card-container');
-  const changeColorAllCardButton = document.querySelector('#change-all-cards-colors-button');
+  const changeColorAllCardButton = document.querySelector('#all-cards-colors-change-button');
 
   if (changeColorAllCardButton && productCards.length > 0) {
     changeColorAllCardButton.addEventListener('click', () => {
@@ -14,7 +14,7 @@ function initCardHandlers() {
 
   //Перекрашивание первой карточки в синий
   const firstProductCard = document.querySelector('.card-container');
-  const changeColorFirstCardButton = document.querySelector('#change-first-card-colors-button');
+  const changeColorFirstCardButton = document.querySelector('#first-card-colors-change-button');
 
   if (changeColorFirstCardButton && firstProductCard) {
     changeColorFirstCardButton.addEventListener('click', () => {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.initCardHandlers = initCardHandlers;
 
 //Кнопка открыть гугл сайт
-const openGoogleButton = document.querySelector('#open-google');
+const openGoogleButton = document.querySelector('#google-open-button');
 openGoogleButton.addEventListener('click', openGoogle)
 
 function openGoogle() {
@@ -47,7 +47,7 @@ function openGoogle() {
 }
 
 //Вывод консоль лог
-const outputLogButton = document.querySelector('#output-console-log')
+const outputLogButton = document.querySelector('#console-log-output-button')
 outputLogButton.addEventListener('click', () => outputConsoleLog('Дз №4'))
 
 function outputConsoleLog(message) {
@@ -56,7 +56,7 @@ function outputConsoleLog(message) {
 }
 
 //Меняем цвет кнопки
-const changeColorButton = document.querySelector('#change-color-button')
+const changeColorButton = document.querySelector('#color-change-button')
 changeColorButton.addEventListener('click', () => {
   changeColorButton.style.backgroundColor = greenColorHash
   changeColorButton.classList.toggle('pink-mode');

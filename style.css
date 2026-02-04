@@ -70,7 +70,7 @@
   color: #A5A3B9;
   padding: 5px 4px;
 
- box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .product-name {
@@ -111,7 +111,8 @@
   font-size: 13px;
 }
 
-.button-design {
+.button-design,
+.design-button {
   padding: 16px 32px;
   font-size: 16px;
   font-weight: 600;

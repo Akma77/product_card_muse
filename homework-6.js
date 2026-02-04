@@ -39,7 +39,15 @@ function logObjectProperty(object, propertyName) {
 logObjectProperty(autoInfo, 'year');
 
 // 7. Создать массив, который содержит названия продуктов (просто строки)
-const products = ['milk', 'water', 'sugar', 'salt', 'potato', 'apple', 'juice']
+const products = [
+  'milk',
+  'water',
+  'sugar',
+  'salt',
+  'potato',
+  'apple',
+  'juice'
+]
 console.log(products)
 
 // 8. Создать массив, состоящий из объектов, где объект представляет собой автомобиль,

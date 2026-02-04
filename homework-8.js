@@ -4,6 +4,10 @@ import { products } from './products.js';
 const productList = document.querySelector('.product-list');
 const productTemplate = document.querySelector('#product-template');
 
+function formatPrice(price) {
+  return price.toLocaleString('ru-RU') + ' ₽';
+}
+
 // 5. Реализовать функцию, которая при старте страницы выводит сообщение (через функцию prompt)
 // "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата - будет выводить
 // введенное количество. Должна быть защита от ввода других значений (проверка if).
@@ -41,7 +45,7 @@ function renderProducts(productsArray) {
     const productCompound = templateContent.querySelector('.product-compound');
     const productPrice = templateContent.querySelector('.product-price');
 
-    productImage.src = product.image;
+    productImage.src = new URL('./img/' + product.image, document.baseURI).href;
     productImage.alt = product.name;
     productCategory.textContent = product.category;
     productName.textContent = product.name;
@@ -64,4 +68,8 @@ const countToDisplay = getCountFromUser();
 if (countToDisplay > 0) {
   // Отрисовываем только нужное количество
   renderProducts(products.slice(0, countToDisplay));
+  // Подключаем обработчики кнопок для карточек
+  if (window.initCardHandlers) {
+    window.initCardHandlers();
+  }
 }

@@ -8,7 +8,12 @@ const newArrayNumbers = arrayNumbers.filter(num => num >= 5);
 console.log(newArrayNumbers);
 
 // 3. Создать массив строк, относящихся к любой сущности (название фильмов/книг, кухонные приборы, мебель и т.д.), проверить, есть ли в массиве какая-то определенная сущность
-const fruitArray = ['apple', 'banana', 'cherry', 'grape'];
+const fruitArray = [
+  'apple',
+  'banana',
+  'cherry',
+  'grape'
+];
 const searchFruit = 'apple';
 const isExist = fruitArray.includes(searchFruit);
 console.log(isExist);
