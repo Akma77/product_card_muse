@@ -8,7 +8,7 @@ function initCardHandlers() {
 
   if (changeColorAllCardButton && productCards.length > 0) {
     changeColorAllCardButton.addEventListener('click', () => {
-      productCards.forEach((card) => card.style.backgroundColor = greenColorHash)
+      productCards.forEach((card) => card.style.backgroundColor = greenColorHash);
     });
   }
 
@@ -18,7 +18,7 @@ function initCardHandlers() {
 
   if (changeColorFirstCardButton && firstProductCard) {
     changeColorFirstCardButton.addEventListener('click', () => {
-      firstProductCard.style.backgroundColor = blueColorHash
+      firstProductCard.style.backgroundColor = blueColorHash;
     });
   }
 }
@@ -34,33 +34,33 @@ window.initCardHandlers = initCardHandlers;
 
 //Кнопка открыть гугл сайт
 const openGoogleButton = document.querySelector('#google-open-button');
-openGoogleButton.addEventListener('click', openGoogle)
+openGoogleButton.addEventListener('click', openGoogle);
 
 function openGoogle() {
   const answer = confirm('Вы действительно хотите открыть Google?');
 
   if (answer === true) {
-    window.open('https://google.com')
+    window.open('https://google.com');
   } else {
     return;
   }
 }
 
 //Вывод консоль лог
-const outputLogButton = document.querySelector('#console-log-output-button')
-outputLogButton.addEventListener('click', () => outputConsoleLog('Дз №4'))
+const outputLogButton = document.querySelector('#console-log-output-button');
+outputLogButton.addEventListener('click', () => outputConsoleLog('Дз №4'));
 
 function outputConsoleLog(message) {
-  alert('10')
-  console.log(message)
+  alert('10');
+  console.log(message);
 }
 
 //Меняем цвет кнопки
-const changeColorButton = document.querySelector('#color-change-button')
+const changeColorButton = document.querySelector('#color-change-button');
 changeColorButton.addEventListener('click', () => {
-  changeColorButton.style.backgroundColor = greenColorHash
+  changeColorButton.style.backgroundColor = greenColorHash;
   changeColorButton.classList.toggle('pink-mode');
-})
+});
 
 //Задача с зоголвоком, чтобы он выводился в консоль лог
 const pageTitle = document.querySelector('.title');

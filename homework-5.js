@@ -1,33 +1,31 @@
 //№3 Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль "Сейчас в X температура  — Y градусов по Цельсию"
 function checkCityTemperature(city, temperature) {
-  console.log(`Сейчас в ${city} температура ${temperature}`)
+  console.log(`Сейчас в ${city} температура ${temperature}`);
 }
 checkCityTemperature("Бишкеке", "8");
 
 //№4. Создать переменную, которая хранит внутри себя скорость света (гуглим). Создать функцию, которая принимает 1 аргумент - скорость, внутри функции происходит проверка: если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", если ниже — "Субсветовая  скорость"? если равна — "Скорость света"
-const SPEED_LIGHT = 299_792_458;  
+const SPEED_LIGHT = 299_792_458;
 function checkSpeedLight(speed) {
   if (speed > SPEED_LIGHT) {
-  console.log('Субсветовая  скорость')
-  }
-  else if (speed < SPEED_LIGHT) { 
-  console.log('Сверхсветовая скорость')
-  }
-  else { 
-  console.log('Скорость света')
+    console.log('Сверхсветовая скорость');
+  } else if (speed < SPEED_LIGHT) {
+    console.log('Субсветовая скорость');
+  } else {
+    console.log('Скорость света');
   }
 }
 checkSpeedLight(299_792_458);
 
 //4 Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".  То-есть с помощью функции мы пытаемся приобрести товар.
-const productPhone = 'Iphone'
-const pricePhone = '740'
+const productPhone = 'Iphone';
+const pricePhone = '740';
 
 function buyPhone(budget) {
   if (pricePhone > budget) {
     console.log("Вам не хватает", pricePhone - budget, "$");
   } else if (pricePhone <= budget) {
-    console.log(productPhone, "приобретён. Спасибо за покупку !");
+    console.log(productPhone, "приобретён. Спасибо за покупку!");
   }
 }
 buyPhone(740);
@@ -43,7 +41,7 @@ checkIftarTime(17_35);
 
 
 //7. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
-const productName = 'Dani'
-const typeOfProduct = 'floar'
-const buildingNumber = '32'
+const productName = 'Dani';
+const typeOfProduct = 'floar';
+const buildingNumber = '32';
 

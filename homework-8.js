@@ -15,14 +15,20 @@ function formatPrice(price) {
 // другая - рендерить эти карточки (принимая массив аргументом)
 function getCountFromUser() {
   const input = prompt("Сколько карточек отобразить? От 1 до 5");
-  const count = parseInt(input);
 
-  if (count >= 1 && count <= 5) {
-    return count;
-  } else {
+  if (input === null) {
     alert("Ошибка! Введите число от 1 до 5.");
     return 0;
   }
+
+  const count = parseInt(input);
+
+  if (isNaN(count) || count < 1 || count > 5) {
+    alert("Ошибка! Введите число от 1 до 5.");
+    return 0;
+  }
+
+  return count;
 }
 
 // 4. Используя метод .reduce(), получить массив объектов, где ключем является название продукта, а значением - его описание
@@ -39,15 +45,13 @@ function renderProducts(productsArray) {
     const templateContent = productTemplate.content.cloneNode(true);
 
     const productImage = templateContent.querySelector('.product-image');
-    const productCategory = templateContent.querySelector('.product-category');
     const productName = templateContent.querySelector('.product-name');
     const productDescription = templateContent.querySelector('.product-description');
     const productCompound = templateContent.querySelector('.product-compound');
     const productPrice = templateContent.querySelector('.product-price');
 
-    productImage.src = new URL('./img/' + product.image, document.baseURI).href;
+    productImage.src = `./img/${product.image}.png`;
     productImage.alt = product.name;
-    productCategory.textContent = product.category;
     productName.textContent = product.name;
     productDescription.textContent = product.description;
     productPrice.textContent = formatPrice(product.price);
