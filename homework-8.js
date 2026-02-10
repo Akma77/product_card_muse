@@ -76,4 +76,7 @@ if (countToDisplay > 0) {
   if (window.initCardHandlers) {
     window.initCardHandlers();
   }
+  else {
+    alert('Ошибка: карточки не отображены. Введите число от 1 до 5.');
+  }
 }
