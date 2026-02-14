@@ -23,13 +23,9 @@ function initCardHandlers() {
   }
 }
 
-// Вызываем после загрузки DOM и создания карточек
 document.addEventListener('DOMContentLoaded', () => {
-  // Ждем немного, чтобы homework-8.js успел создать карточки
   setTimeout(initCardHandlers, 100);
 });
-
-// Также экспортируем функцию для вызова из homework-8.js
 window.initCardHandlers = initCardHandlers;
 
 //Кнопка открыть гугл сайт

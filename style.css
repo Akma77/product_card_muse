@@ -53,6 +53,8 @@
 .card-container img {
   align-self: center;
   margin-bottom: 15px;
+  width: 290px;
+  height: 245px;
 }
 
 .card-container p {
