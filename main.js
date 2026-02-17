@@ -1,4 +1,3 @@
-//Перекрашивание всех карточек в зелёный
 const greenColorHash = '#00FF00';
 const blueColorHash = '#0000FF';
 
@@ -12,7 +11,6 @@ function initCardHandlers() {
     });
   }
 
-  //Перекрашивание первой карточки в синий
   const firstProductCard = document.querySelector('.card-container');
   const changeColorFirstCardButton = document.querySelector('#first-card-colors-change-button');
 
@@ -28,21 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 window.initCardHandlers = initCardHandlers;
 
-//Кнопка открыть гугл сайт
 const openGoogleButton = document.querySelector('#google-open-button');
 openGoogleButton.addEventListener('click', openGoogle);
 
 function openGoogle() {
   const answer = confirm('Вы действительно хотите открыть Google?');
 
-  if (answer === true) {
+  if (answer) {
     window.open('https://google.com');
   } else {
     return;
   }
 }
 
-//Вывод консоль лог
 const outputLogButton = document.querySelector('#console-log-output-button');
 outputLogButton.addEventListener('click', () => outputConsoleLog('Дз №4'));
 
@@ -51,14 +47,12 @@ function outputConsoleLog(message) {
   console.log(message);
 }
 
-//Меняем цвет кнопки
 const changeColorButton = document.querySelector('#color-change-button');
 changeColorButton.addEventListener('click', () => {
   changeColorButton.style.backgroundColor = greenColorHash;
   changeColorButton.classList.toggle('pink-mode');
 });
 
-//Задача с зоголвоком, чтобы он выводился в консоль лог
 const pageTitle = document.querySelector('.title');
 pageTitle.addEventListener('mouseenter', () => {
   console.log(pageTitle.textContent);

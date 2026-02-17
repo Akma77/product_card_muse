@@ -39,7 +39,6 @@ function getProductNameDescriptionArray(productsArray) {
   }, []);
 }
 
-// Рендеринг карточек
 function renderProducts(productsArray) {
   productsArray.forEach(product => {
     const templateContent = productTemplate.content.cloneNode(true);
@@ -67,12 +66,9 @@ function renderProducts(productsArray) {
   });
 }
 
-// 5. Запуск логики
 const countToDisplay = getCountFromUser();
 if (countToDisplay > 0) {
-  // Отрисовываем только нужное количество
   renderProducts(products.slice(0, countToDisplay));
-  // Подключаем обработчики кнопок для карточек
   if (window.initCardHandlers) {
     window.initCardHandlers();
   }
