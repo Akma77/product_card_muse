@@ -37,6 +37,7 @@ function getProductNameDescriptionArray(productsArray) {
     acc.push({ [product.name]: product.description });
     return acc;
   }, []);
+
 }
 
 function renderProducts(productsArray) {

@@ -70,4 +70,4 @@ export const socialMediaComments = [
     email: "Carmen_Keeling@caroline.name",
     body: "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
   }
-]
+];
