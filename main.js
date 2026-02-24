@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 window.initCardHandlers = initCardHandlers;
 
 const openGoogleButton = document.querySelector('#google-open-button');
-openGoogleButton.addEventListener('click', openGoogle);
+if (openGoogleButton) {
+  openGoogleButton.addEventListener('click', openGoogle);
+}
 
 function openGoogle() {
   const answer = confirm('Вы действительно хотите открыть Google?');
@@ -40,7 +42,9 @@ function openGoogle() {
 }
 
 const outputLogButton = document.querySelector('#console-log-output-button');
-outputLogButton.addEventListener('click', () => outputConsoleLog('Дз №4'));
+if (outputLogButton) {
+  outputLogButton.addEventListener('click', () => outputConsoleLog('Дз №4'));
+}
 
 function outputConsoleLog(message) {
   alert('10');
@@ -48,12 +52,16 @@ function outputConsoleLog(message) {
 }
 
 const changeColorButton = document.querySelector('#color-change-button');
-changeColorButton.addEventListener('click', () => {
-  changeColorButton.style.backgroundColor = greenColorHash;
-  changeColorButton.classList.toggle('pink-mode');
-});
+if (changeColorButton) {
+  changeColorButton.addEventListener('click', () => {
+    changeColorButton.style.backgroundColor = greenColorHash;
+    changeColorButton.classList.toggle('pink-mode');
+  });
+}
 
 const pageTitle = document.querySelector('.title');
-pageTitle.addEventListener('mouseenter', () => {
-  console.log(pageTitle.textContent);
-});
+if (pageTitle) {
+  pageTitle.addEventListener('mouseenter', () => {
+    console.log(pageTitle.textContent);
+  });
+}

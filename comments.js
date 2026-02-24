@@ -1,11 +1,13 @@
-// 5 Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов этого массива. Данный массив представляет собой пример комментариев в соц. сетях, поэтому переменная должна быть названа по смыслу. Не забудьте удалить квадратные кавычки у ключей объектов (можно использовать Chat GPT, что бы не делать это вручную)
+// 5 Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов этого массива.
+// Данный массив представляет собой пример комментариев в соцсетях, поэтому переменная должна быть названа по смыслу.
+// Не забудьте удалить квадратные кавычки у ключей объектов (можно использовать ChatGPT, чтобы не делать это вручную).
 export const socialMediaComments = [
   {
     postId: 1,
     id: 1,
     name: "id labore ex et quam laborum",
     email: "Eliseo@gardner.biz",
-    body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium",
   },
   {
     postId: 1,
@@ -19,7 +21,7 @@ export const socialMediaComments = [
     id: 3,
     name: "odio adipisci rerum aut animi",
     email: "Nikita@garfield.biz",
-    body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+    body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione",
   },
   {
     postId: 1,
@@ -33,7 +35,7 @@ export const socialMediaComments = [
     id: 5,
     name: "vero eaque aliquid doloribus et culpa",
     email: "Hayden@althea.biz",
-    body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+    body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et",
   },
   {
     postId: 2,
@@ -47,7 +49,7 @@ export const socialMediaComments = [
     id: 7,
     name: "repellat consequatur praesentium vel minus molestias voluptatum",
     email: "Dallas@ole.me",
-    body: "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+    body: "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor",
   },
   {
     postId: 2,
@@ -61,13 +63,13 @@ export const socialMediaComments = [
     id: 9,
     name: "provident id voluptas",
     email: "Meghan_Littel@rene.us",
-    body: "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+    body: "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus",
   },
   {
     postId: 2,
     id: 10,
     name: "eaque et deleniti atque tenetur ut quo ut",
     email: "Carmen_Keeling@caroline.name",
-    body: "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
-  }
+    body: "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis",
+  },
 ];
