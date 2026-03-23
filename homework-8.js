@@ -1,0 +1,77 @@
+// 3. По аналогии из лекции — создать и реализовать шаблон для продуктовых карточек.
+import { products } from './products.js';
+
+const productList = document.querySelector('.product-list');
+const productTemplate = document.querySelector('#product-template');
+
+function formatPrice(price) {
+  return price.toLocaleString('ru-RU') + ' ₽';
+}
+
+// 5. Реализовать функцию, которая при старте страницы выводит сообщение (через функцию prompt)
+// "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата — будет выводить
+// введенное количество. Должна быть защита от ввода других значений (проверка if).
+// То есть: у нас будет 2 функции, одна возвращает количество карточек, которое нужно ввести,
+// другая — рендерит эти карточки (принимая массив аргументом).
+function getCountFromUser() {
+  const input = prompt("Сколько карточек отобразить? От 1 до 5");
+
+  if (!input) {
+    alert('Ошибка! Введите число от 1 до 5.');
+    return 0;
+  }
+
+  const count = parseInt(input);
+
+  if (isNaN(count) || count < 1 || count > 5) {
+    alert('Ошибка! Введите число от 1 до 5.');
+    return 0;
+  }
+
+  return count;
+}
+
+// 4. Используя метод .reduce(), получить массив объектов, где ключом является название продукта, а значением — его описание.
+function getProductNameDescriptionArray(productsArray) {
+  return productsArray.reduce((acc, product) => {
+    acc.push({ [product.name]: product.description });
+    return acc;
+  }, []);
+}
+
+function renderProducts(productsArray) {
+  productsArray.forEach(product => {
+    const templateContent = productTemplate.content.cloneNode(true);
+
+    const productImage = templateContent.querySelector('.product-image');
+    const productName = templateContent.querySelector('.product-name');
+    const productDescription = templateContent.querySelector('.product-description');
+    const productCompound = templateContent.querySelector('.product-compound');
+    const productPrice = templateContent.querySelector('.product-price');
+
+    productImage.src = `./img/${product.image}.png`;
+    productImage.alt = product.name;
+    productName.textContent = product.name;
+    productDescription.textContent = product.description;
+    productPrice.textContent = formatPrice(product.price);
+
+    product.compound.forEach(ingredient => {
+      const compoundItem = document.createElement('li');
+      compoundItem.className = 'product-compound-list';
+      compoundItem.textContent = ingredient;
+      productCompound.appendChild(compoundItem);
+    });
+
+    productList.appendChild(templateContent);
+  });
+}
+
+const countToDisplay = getCountFromUser();
+if (countToDisplay > 0) {
+  renderProducts(products.slice(0, countToDisplay));
+  if (window.initCardHandlers) {
+    window.initCardHandlers();
+  }
+} else {
+  alert('Ошибка: карточки не отображены. Введите число от 1 до 5.');
+}
