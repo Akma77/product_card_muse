@@ -275,7 +275,6 @@ button:hover {
   padding-bottom: 40px;
 }
 
-/* Branding */
 .site-footer__title {
   font-size: 22px;
   font-weight: 700;
@@ -309,7 +308,6 @@ button:hover {
   color: #ffffff;
 }
 
-/* Subscribe */
 .site-footer__subscribe {
   flex: 0 0 auto;
   text-align: center;
@@ -372,7 +370,6 @@ button:hover {
   transform: none;
 }
 
-/* Nav */
 .site-footer__nav {
   text-align: right;
 }
@@ -395,7 +392,6 @@ button:hover {
   color: #ffffff;
 }
 
-/* Bottom */
 .site-footer__bottom {
   text-align: center;
 }
