@@ -66,11 +66,12 @@ function renderProducts(productsArray) {
   });
 }
 
-// Временно отключено, чтобы не всплывало окно prompt:
-// const countToDisplay = getCountFromUser();
-const countToDisplay = 5;
-
-renderProducts(products.slice(0, countToDisplay));
-if (window.initCardHandlers) {
-  window.initCardHandlers();
+const countToDisplay = getCountFromUser();
+if (countToDisplay > 0) {
+  renderProducts(products.slice(0, countToDisplay));
+  if (window.initCardHandlers) {
+    window.initCardHandlers();
+  }
+} else {
+  alert('Ошибка: карточки не отображены. Введите число от 1 до 5.');
 }
