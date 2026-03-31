@@ -15,7 +15,7 @@ subscribeForm.addEventListener('submit', (event) => {
   console.log({ email });
 });
 
-// ===== Модальное окно =====
+// ===== Модальное окно ====
 const modal = document.getElementById('modal');
 const overlay = document.getElementById('overlay');
 const registerOpenButton = document.getElementById('register-open-button');
