@@ -128,16 +128,6 @@
   min-width: 220px;
 }
 
-.top-buttons {
-  max-width: 1200px;
-  margin: 16px auto 0;
-  padding: 0 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-}
-
 button:hover {
   background: #E8E8F0;
   transform: translateY(-2px);
