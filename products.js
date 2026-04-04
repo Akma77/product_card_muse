@@ -58,5 +58,5 @@ export const products = [
       'масла'
     ],
     price: 7520
-  }
+   }
 ];

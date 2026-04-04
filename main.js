@@ -1,7 +1,7 @@
 const greenColorHash = '#00FF00';
 const blueColorHash = '#0000FF';
 
-function initCardHandlers() {
+function initCardHandlers()  {
   const productCards = document.querySelectorAll('.card-container');
   const changeColorAllCardButton = document.querySelector('#all-cards-colors-change-button');
 
