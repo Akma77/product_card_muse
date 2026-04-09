@@ -1,21 +1,21 @@
 // ===== Форма подписки (футер) =====
 const subscribeForm = document.querySelector('.site-footer__form');
-const emailInput = document.querySelector('.site-footer__input');
 
 subscribeForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const email = emailInput.value.trim();
+  const formData = new FormData(subscribeForm);
+  const email = formData.get('email').trim();
 
   if (!email || !email.includes('@')) {
-    emailInput.focus();
+    subscribeForm.querySelector('.site-footer__input').focus();
     return;
   }
 
   console.log({ email });
 });
 
-// ===== Модальное окно ====
+// ===== Модальное окно =====
 const modal = document.getElementById('modal');
 const overlay = document.getElementById('overlay');
 const registerOpenButton = document.getElementById('register-open-button');
@@ -47,8 +47,9 @@ registerForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const password = registerForm.password.value;
-  const passwordRepeat = registerForm.passwordRepeat.value;
+  const formData = new FormData(registerForm);
+  const password = formData.get('password');
+  const passwordRepeat = formData.get('passwordRepeat');
 
   if (password !== passwordRepeat) {
     alert('Пароли не совпадают. Регистрация отклонена.');
@@ -56,10 +57,10 @@ registerForm.addEventListener('submit', (event) => {
   }
 
   user = {
-    firstName: registerForm.firstName.value.trim(),
-    lastName: registerForm.lastName.value.trim(),
-    birthDate: registerForm.birthDate.value,
-    login: registerForm.login.value.trim(),
+    firstName: formData.get('firstName').trim(),
+    lastName: formData.get('lastName').trim(),
+    birthDate: formData.get('birthDate'),
+    login: formData.get('login').trim(),
     password: password,
     createdOn: new Date(),
   };
