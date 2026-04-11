@@ -4,10 +4,11 @@ const subscribeForm = document.querySelector('.site-footer__form');
 subscribeForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const formData = new FormData(subscribeForm);
-  const email = formData.get('email').trim();
+  const data = Object.fromEntries(new FormData(subscribeForm));
+  const email = data.email.trim();
 
   if (!email || !email.includes('@')) {
+    alert('Пожалуйста, введите корректный email!');
     subscribeForm.querySelector('.site-footer__input').focus();
     return;
   }
@@ -47,21 +48,19 @@ registerForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const formData = new FormData(registerForm);
-  const password = formData.get('password');
-  const passwordRepeat = formData.get('passwordRepeat');
+  const data = Object.fromEntries(new FormData(registerForm));
 
-  if (password !== passwordRepeat) {
+  if (data.password !== data.passwordRepeat) {
     alert('Пароли не совпадают. Регистрация отклонена.');
     return;
   }
 
   user = {
-    firstName: formData.get('firstName').trim(),
-    lastName: formData.get('lastName').trim(),
-    birthDate: formData.get('birthDate'),
-    login: formData.get('login').trim(),
-    password: password,
+    firstName: data.firstName.trim(),
+    lastName: data.lastName.trim(),
+    birthDate: data.birthDate,
+    login: data.login.trim(),
+    password: data.password,
     createdOn: new Date(),
   };
 
