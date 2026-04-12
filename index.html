@@ -13,11 +13,14 @@
 </head>
 
 <body>
-  <button id="all-cards-colors-change-button" class="design-button">Сменить цвет всех карточек</button>
-  <button id="first-card-colors-change-button" class="design-button">Сменить цвет первой карточки</button>
-  <button id="google-open-button" class="design-button">Открыть Google</button>
-  <button id="console-log-output-button" class="design-button">Вывести сообщение в консоль лог</button>
-  <button id="color-change-button" class="design-button">Поменять цвет кнопки</button>
+  <div class="top-buttons">
+    <button id="all-cards-colors-change-button" class="design-button">Сменить цвет всех карточек</button>
+    <button id="first-card-colors-change-button" class="design-button">Сменить цвет первой карточки</button>
+    <button id="google-open-button" class="design-button">Открыть Google</button>
+    <button id="console-log-output-button" class="design-button">Вывести сообщение в консоль лог</button>
+    <button id="color-change-button" class="design-button">Поменять цвет кнопки</button>
+    <button id="register-open-button" class="design-button">Регистрация</button>
+  </div>
   <header class="title-container">
     <h1 class="title">Выбери свой продукт</h1>
   </header>
@@ -38,8 +41,87 @@
     </li>
   </template>
   <ul class="product-list"></ul>
+
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <div class="site-footer__branding">
+        <h2 class="site-footer__title">Product Cards</h2>
+        <p class="site-footer__subtitle">У Нас Самые Лучшие Продукты Для Кожи!</p>
+        <ul class="site-footer__social-list" aria-label="Социальные сети">
+          <li class="site-footer__social-item">
+            <a href="#" class="site-footer__social-link" aria-label="Телеграм">
+              <img src="img/telegram-icon.svg" alt="Telegram" width="24" height="24">
+            </a>
+          </li>
+          <li class="site-footer__social-item">
+            <a href="#" class="site-footer__social-link" aria-label="ВКонтакте">
+              <img src="img/vk-icon.svg" alt="ВКонтакте" width="24" height="24">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="site-footer__subscribe">
+        <h3 class="site-footer__heading">Подпишись на наши акции:</h3>
+        <form class="site-footer__form">
+          <input class="site-footer__input" type="email" name="email" placeholder="Введи Email..." required>
+          <button class="site-footer__button" type="submit">Подписаться</button>
+        </form>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Быстрые ссылки">
+        <h3 class="site-footer__heading">Быстрые ссылки</h3>
+        <ul class="site-footer__nav-list">
+          <li><a href="#" class="site-footer__nav-link">Главная</a></li>
+          <li><a href="#" class="site-footer__nav-link">Магазин</a></li>
+          <li><a href="#" class="site-footer__nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <hr class="site-footer__divider">
+      <p class="site-footer__copyright">www.product-cards.com©all right reserve</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <button class="modal__close" id="modal-close">✕</button>
+    <h2 class="modal__title">Регистрация</h2>
+    <form class="modal__form" id="register-form">
+      <label class="modal__label">
+        Имя
+        <input class="modal__input" type="text" name="firstName" placeholder="Введите имя" required>
+      </label>
+      <label class="modal__label">
+        Фамилия
+        <input class="modal__input" type="text" name="lastName" placeholder="Введите фамилию" required>
+      </label>
+      <label class="modal__label">
+        Дата рождения
+        <input class="modal__input" type="date" name="birthDate" required>
+      </label>
+      <label class="modal__label">
+        Логин
+        <input class="modal__input" type="text" name="login" placeholder="Введите логин" required minlength="3">
+      </label>
+      <label class="modal__label">
+        Пароль
+        <input class="modal__input" type="password" name="password" placeholder="Введите пароль" required minlength="6">
+      </label>
+      <label class="modal__label">
+        Повторите пароль
+        <input class="modal__input" type="password" name="passwordRepeat" placeholder="Повторите пароль" required minlength="6">
+      </label>
+      <button class="modal__submit" type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+
   <script src="main.js" defer></script>
   <script src="homework-5.js" defer></script>
   <script src="homework-8.js" type="module" defer></script>
+  <script src="homework-9.js" defer></script>
 </body>
 </html>
+
