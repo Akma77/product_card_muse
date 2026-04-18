@@ -17,27 +17,16 @@ subscribeForm.addEventListener('submit', (event) => {
 });
 
 // ===== Модальное окно =====
-const modal = document.getElementById('modal');
-const overlay = document.getElementById('overlay');
+import { Modal } from './Modal.js';
+
+const registerModal = new Modal('modal');
 const registerOpenButton = document.getElementById('register-open-button');
-const modalCloseButton = document.getElementById('modal-close');
 const registerForm = document.getElementById('register-form');
 
 let user = null;
 
-function openModal() {
-  modal.classList.add('modal-showed');
-  overlay.classList.add('modal-showed');
-}
-
-function closeModal() {
-  modal.classList.remove('modal-showed');
-  overlay.classList.remove('modal-showed');
-}
-
-registerOpenButton.addEventListener('click', openModal);
-modalCloseButton.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+registerOpenButton.addEventListener('click', () => registerModal.open());
+document.getElementById('overlay').addEventListener('click', () => registerModal.close());
 
 // ===== Форма регистрации =====
 registerForm.addEventListener('submit', (event) => {
@@ -65,5 +54,5 @@ registerForm.addEventListener('submit', (event) => {
   };
 
   console.log(user);
-  closeModal();
+  registerModal.close();
 });
