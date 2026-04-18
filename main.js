@@ -1,3 +1,7 @@
+import './homework-5.js';
+import './homework-8.js';
+import './homework-9.js';
+
 const greenColorHash = '#00FF00';
 const blueColorHash = '#0000FF';
 function initCardHandlers()  {
