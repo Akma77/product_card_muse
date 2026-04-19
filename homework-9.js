@@ -1,43 +1,44 @@
-// ===== Форма подписки (футер) =====
-const subscribeForm = document.querySelector('.site-footer__form');
+import { Modal } from './Modal.js';
+import { Form } from './Form.js';
 
-subscribeForm.addEventListener('submit', (event) => {
+// ===== Форма подписки (футер) =====
+const subscribeForm = new Form('subscribe-form');
+
+subscribeForm.form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const data = Object.fromEntries(new FormData(subscribeForm));
+  const data = subscribeForm.getValues();
   const email = data.email.trim();
 
   if (!email || !email.includes('@')) {
     alert('Пожалуйста, введите корректный email!');
-    subscribeForm.querySelector('.site-footer__input').focus();
+    subscribeForm.form.querySelector('.site-footer__input').focus();
     return;
   }
 
   console.log({ email });
+  subscribeForm.reset();
 });
 
 // ===== Модальное окно =====
-import { Modal } from './Modal.js';
-
 const registerModal = new Modal('modal');
-const registerOpenButton = document.getElementById('register-open-button');
-const registerForm = document.getElementById('register-form');
+const registerForm = new Form('register-form');
 
 let user = null;
 
-registerOpenButton.addEventListener('click', () => registerModal.open());
+document.getElementById('register-open-button').addEventListener('click', () => registerModal.open());
 document.getElementById('overlay').addEventListener('click', () => registerModal.close());
 
 // ===== Форма регистрации =====
-registerForm.addEventListener('submit', (event) => {
+document.getElementById('register-form').addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (!registerForm.checkValidity()) {
+  if (!registerForm.isValid()) {
     alert('Пожалуйста, заполните все поля корректно. Регистрация отклонена.');
     return;
   }
 
-  const data = Object.fromEntries(new FormData(registerForm));
+  const data = registerForm.getValues();
 
   if (data.password !== data.passwordRepeat) {
     alert('Пароли не совпадают. Регистрация отклонена.');
@@ -55,4 +56,5 @@ registerForm.addEventListener('submit', (event) => {
 
   console.log(user);
   registerModal.close();
+  registerForm.reset();
 });
